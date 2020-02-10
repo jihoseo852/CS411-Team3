@@ -17,4 +17,4 @@ Spotify/Soundcloud Visualizer
 
 Amazon stock alarm
 
-Bitcoin auto trader 
+Bitcoin auto trader - let users choose the algorithm(when to sell and when to buy) or just can simply choose our recommended trading algorithms(one or two). The API is provided from many bitcoin trading exchanges. 
