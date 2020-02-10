@@ -13,3 +13,5 @@ Jason Hong - jason810@bu.edu - 562 484 8727
 
 Ideas:
 Spotify/Soundcloud Visualizer
+Amazon stock alarm
+Bitcoin auto trader 
