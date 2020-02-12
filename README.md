@@ -23,3 +23,5 @@ Photo-based Music Recommendations: Allow user to take a photo of anything, a lan
 Web browser plugin that acts as a compact media player (music, podcasts, ect) for (Youtube, Soundcloud, Netflix, ect. {start small}) So I don't hafta keep switchin' tabs clumsily when i'm tryna listen to my fav things while i study.
 
 Going off of the Web browser plugin idea above, we could make a small UI for one of the media players that we could pull up via a shortcut while playing games or doing something else that allows us to do simple things like switch the music, select a playlist, or adjust volume. Similar to how Steam has an overlay, or a discord overlay.
+
+A sort of social media network for studying + school. Similar to Piazza in where there are communities for classes, but teachers and TA's are not involved. It would have a much more casual feel, almost like a slack or discord. Where students can help eachother and discuss answers without pressure. Because personally, I feel like Piazza has a very outdated feel and doesn't create a class community in the way that is possible.
