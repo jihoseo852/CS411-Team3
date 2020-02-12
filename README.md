@@ -21,3 +21,5 @@ Bitcoin auto trader - let users choose the algorithm(when to sell and when to bu
 Photo-based Music Recommendations: Allow user to take a photo of anything, a landscape, person, etc, and gives music recommendations. Google has an emotional analysis API, and we can also use color/blur/and location metadata from the photo for music recommendations.
 
 Web browser plugin that acts as a compact media player (music, podcasts, ect) for (Youtube, Soundcloud, Netflix, ect. {start small}) So I don't hafta keep switchin' tabs clumsily when i'm tryna listen to my fav things while i study.
+
+Going off of the Web browser plugin idea above, we could make a small UI for one of the media players that we could pull up via a shortcut while playing games or doing something else that allows us to do simple things like switch the music, select a playlist, or adjust volume. Similar to how Steam has an overlay, or a discord overlay.
