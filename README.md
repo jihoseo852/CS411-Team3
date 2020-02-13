@@ -1,6 +1,6 @@
 # CS411 - Team 3
 
-## Written By
+## Authors
 Hunter Chun - hunterch@bu.edu
 
 Justin Taylor - jdtaylor@bu.edu
