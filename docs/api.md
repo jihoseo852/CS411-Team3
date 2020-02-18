@@ -12,11 +12,13 @@ Data: Faces, Objects, Emotions, Celebrities
 [docs](https://developer.spotify.com/documentation/web-api/)
 
 Data: Songs, Playlists
+[here](https://developer.spotify.com/documentation/web-api/reference/object-model/) is Spotify's Object Model
 
 ## Genius API
 [docs](https://docs.genius.com/)
 
 Data: Lyrics, Keywords
+
 
 ## Google OAuth 2.0
 [docs](https://developers.google.com/identity/protocols/OAuth2)
