@@ -1,8 +1,5 @@
-# User Stories
+# User Story #1
 
-Authors: Hunter Chun, Justin Taylor, Jiho Seo, Jason Hong, Joseph Bain
+Hunter Chun, Justin Taylor, Jiho Seo, Jason Hong, Joseph Bain
 
-{hunterch,jdtaylor,jihoseo,jason810,jbain359} @ bu.edu
-
-
-User logs into our site successfully. They then upload a photo and a playlist of 5 songs is returned based off the keywords that the Google Vision API generates. 
+A logged-in user wants music recommendations based off photo that he takes. He uploads a photo, and using the identifiable objects, colors, and location data, a playlist of 5 songs is returned. These suggestions are saved to his profile for future revisiting.
