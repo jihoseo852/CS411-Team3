@@ -1,5 +1,0 @@
-JavaScript file(s) for Application Prototype
-Collect input from the html form and store that input into a variable
-Create an API string based on the input
-Call this string and receive JSON back
-Parse and display this JSON object
