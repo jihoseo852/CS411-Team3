@@ -7,8 +7,10 @@ import io
 import visionimg
 import spotifytracksearch
 
+path = sys.argv[1]
+
 #fetches keywords from visionimg.py
-keywords = visionimg.visionapi()
+keywords = visionimg.visionapi(path)
 
 #fetches songs from spotifytracksearch.py
 print('')

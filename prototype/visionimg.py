@@ -5,12 +5,12 @@ import os
 from google.cloud import vision
 from google.cloud.vision import types
 
-def visionapi():
+def visionapi(path):
 	# Instantiates a client
 	client = vision.ImageAnnotatorClient()
 
 	# The name of the image file to annotate
-	file_name = os.path.abspath('sunset.jpg')
+	file_name = os.path.abspath(path)
 
 	# Loads the image into memory
 	with io.open(file_name, 'rb') as image_file:
