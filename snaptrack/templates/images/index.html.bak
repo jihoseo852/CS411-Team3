@@ -23,16 +23,5 @@
     </body>
 </div>
 
-<div class = "data-display">
-  <h2 class = "data-heading">Results</h2>
-  <u1>
-    {% for row in results %}
-        <p> Song 1: 	{{ row[1]}} </p>
-        <p> Song 2: 	{{ row[2]}} </p>
-        <p> Song 3: 	{{ row[3]}} </p>
-        <p> Song 4: 	{{ row[4]}} </p>
-        <p> Song 5: 	{{ row[5]}} </p>
-</div>
-	
 </body>
 </html>
