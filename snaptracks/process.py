@@ -4,8 +4,8 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from snaptrack.auth import login_required
-from snaptrack.db import get_db
+from snaptracks.auth import login_required
+from snaptracks.db import get_db
 
 bp = Blueprint('process', __name__)
 
@@ -29,7 +29,7 @@ def upload():
 			print('hits here')
 			if photo.filename != '':
 				# doesn't work without full filepath
-				photo.save(os.path.join('/home/jason/Documents/JH/projects/411/snaptrack/photodb/', photo.filename))
+				photo.save(os.path.join('/home/jason/Documents/JH/projects/411/snaptracks/photodb/', photo.filename))
 		error = None
 
 		print('hits')
