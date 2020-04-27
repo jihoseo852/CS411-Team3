@@ -9,5 +9,11 @@ This project requires the following dependencies
 
 ## Usage
 
+Initialize the db:
+`export FLASK_APP='snaptrack'`
+`export FLASK_ENV='development`
+`python -m flask init-db`
+
+Run
 On Python v.3+ run `python -m flask run` on the root directory. Then navigate to your browser and go to `http://127.0.0.1:5000/`. 
 

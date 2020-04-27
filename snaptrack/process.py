@@ -28,7 +28,8 @@ def upload():
 			photo = request.files['photo']
 			print('hits here')
 			if photo.filename != '':
-				photo.save(os.path.join('/home/jason/Documents/JH/projects/411/snaptrack/photodb', title))
+				# doesn't work without full filepath
+				photo.save(os.path.join('/home/jason/Documents/JH/projects/411/snaptrack/photodb/', photo.filename))
 		error = None
 
 		print('hits')
