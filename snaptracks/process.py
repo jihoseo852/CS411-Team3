@@ -1,4 +1,5 @@
 import os
+import hashlib
 from flask import (
 	Blueprint, flash, g, redirect, render_template, request, url_for
 )
@@ -29,7 +30,11 @@ def upload():
 			print('hits here')
 			if photo.filename != '':
 				# doesn't work without full filepath
-				photo.save(os.path.join('/home/jason/Documents/JH/projects/411/snaptracks/photodb/', photo.filename))
+				photo_db_path = '/home/jason/Documents/JH/projects/411/snaptracks/photodb/'
+				photo.save(os.path.join(photo_db_path, photo.filename))
+				img_file = open(path).read()
+				
+				
 		error = None
 
 		print('hits')
