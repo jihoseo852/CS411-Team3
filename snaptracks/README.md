@@ -11,17 +11,17 @@ This project requires the following dependencies
 
 ## Usage
 
-Initialize the db:
-
-`export FLASK_APP='snaptrack'`
-
-`export FLASK_ENV='development`
-
-`python -m flask init-db`
-
 Replace Filesystem Pointers
 
-Currently, the system is set to `/home/jason/.../photodb`. Change this directory to point to your project location.
+Currently, the system is set to `/home/jason/.../photodb`. Locate the pointer in process.py and change this directory to point to your project location. 
+
+Initialize the db:
+
+`set FLASK_APP=snaptrack`
+
+`set FLASK_ENV=development`
+
+`python -m flask init-db`
 
 Run
 
