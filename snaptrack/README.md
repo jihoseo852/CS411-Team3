@@ -19,7 +19,7 @@ Initialize the db:
 
 `set FLASK_APP=snaptrack`
 
-`set FLASK_ENV=development'
+`set FLASK_ENV=development`
 
 `python -m flask init-db`
 
