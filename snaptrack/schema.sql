@@ -12,6 +12,5 @@ CREATE TABLE img (
   author_id INTEGER NOT NULL,
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   title TEXT NOT NULL,
-  img_path TEXT NOT NULL,
   FOREIGN KEY (author_id) REFERENCES user (id)
 );
