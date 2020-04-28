@@ -22,7 +22,6 @@ def index():
 	return render_template('images/index.html', pics=pics)
 
 @bp.route('/upload', methods=['GET', 'POST'])
-@login_required
 def upload():
 	if request.method == 'POST':
 		title = request.form['title']	
@@ -60,7 +59,7 @@ def upload():
 			db.execute(
 				'INSERT INTO img (title, author_id, hash, body)'
 				' VALUES (?, ?, ?, ?)',
-				(title, g.user['id'], md5_hash, songs)
+				(title, 'PLACEHOLDER', md5_hash, songs)
 			)
 			db.commit()
 			return redirect(url_for('process.index'))

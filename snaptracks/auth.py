@@ -98,9 +98,14 @@ def callback():
 
 	# Begin user session by logging the user in
 	login_user(user)
-
+	session.clear()
+	db = get_db()	
+	user = db.execute (
+		'SELECT * FROM user WHERE name = ?', (users_name,)
+	).fetchone()
+	session['user_id'] = user['id']
 	# Send user back to homepage
-	return redirect(url_for('index'))
+	return redirect(url_for('process.upload'))
 
 def load_logged_in_user():
 	user_name = session.get('name')
@@ -115,6 +120,10 @@ def load_logged_in_user():
 def logout():
 	logout_user()
 	return redirect(url_for("index"))
+
+@bp.before_request
+def before_request():
+	g.user = current_user
 
 @bp.route("/handleUpload", methods=['POST'])
 def fileUpload():
