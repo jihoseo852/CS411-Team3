@@ -29,7 +29,8 @@ def upload():
 			photo = request.files['photo']
 			if photo.filename != '':
 				# doesn't work without full filepath
-				photo_db_path = r'C:\Users\jtayb\Desktop\CS411-Team3-master\snaptracks\photodb'
+				photo_db_path = '/home/jason/Documents/JH/projects/411/snaptracks/photodb'
+				#photo_db_path = r'C:\Users\jtayb\Desktop\CS411-Team3-master\snaptracks\photodb'
 				photo_path = os.path.join(photo_db_path, photo.filename)
 				photo.save(photo_path)
 				with open(photo_path, 'rb') as f:

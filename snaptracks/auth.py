@@ -38,7 +38,7 @@ client = WebApplicationClient(GOOGLE_CLIENT_ID)
 def get_google_provider_cfg():
 	return requests.get(GOOGLE_DISCOVERY_URL).json()
 
-@bp.route('/login')
+@bp.route('/login',methods=['GET','POST'])
 def login():
 	# Find out what URL to hit for Google login
 	google_provider_cfg = get_google_provider_cfg()
@@ -53,7 +53,7 @@ def login():
 	)
 	return redirect(request_uri)
 
-@bp.route('/login/callback')
+@bp.route('/login/callback', methods=['POST', 'GET'])
 def callback():
 	# Get authorization code Google sent back to you
 	code = request.args.get("code")
@@ -103,12 +103,13 @@ def callback():
 	user = db.execute (
 		'SELECT * FROM user WHERE name = ?', (users_name,)
 	).fetchone()
-	session['user_id'] = user['id']
+	session['user_id'] = user['name']
+	load_logged_in_user()
 	# Send user back to homepage
-	return redirect(url_for('process.upload'))
+	return redirect(url_for('index'))
 
 def load_logged_in_user():
-	user_name = session.get('name')
+	user_id = session.get('user_id')
 	if user_id is None:
 		g.user = None
 	else:
@@ -136,6 +137,7 @@ def fileUpload():
 def login_required(view):
 	@functools.wraps(view)
 	def wrapped_view(**kwargs):
+		before_request()
 		if g.user is None:
 			return redirect(url_for('auth.login'))
 		return view(**kwargs)
