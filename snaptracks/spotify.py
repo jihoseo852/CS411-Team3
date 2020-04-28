@@ -47,7 +47,7 @@ def spotifysearch(keyword1,keyword2):
 	resp = searchResp.json()
 
 	result = []
-	for x in range(int(keyword2)):
+	for x in range(max(0,len(resp["tracks"]["items"]))):
 		if (resp["tracks"]["items"][x]["name"]):
 			result.append(str(resp["tracks"]["items"][x]["name"]) + ' - ' + str(resp["tracks"]["items"][x]["album"]["artists"][x]["name"]))
 

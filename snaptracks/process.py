@@ -38,6 +38,10 @@ def upload():
 					img_file = f.read()
 				md5_hash = hashlib.md5(img_file).hexdigest()
 				db = get_db()
+
+				cache = db.execute(
+					'SELECT body FROM img WHERE hash = ?', (md5_hash,)
+				).fetchone()
 				if db.execute (
 					'SELECT hash FROM img WHERE hash = ?', (md5_hash,)
 				).fetchone() is not None:
@@ -45,10 +49,8 @@ def upload():
 						'SELECT body FROM img WHERE hash = ?', (md5_hash,)
 					).fetchone()
 					songs = cache[0]
-					return render_template('process/upload.html',songs=songs)
 				else:
-					songs = str(visionwithspotify.process(photo_path)).strip('[]')
-					return render_template('process/upload.html',songs=songs)
+					songs = str(visionwithspotify.process(photo_path))
 				
 		error = None
 
@@ -66,7 +68,7 @@ def upload():
 				(title, 'PLACEHOLDER', md5_hash, songs)
 			)
 			db.commit()
-			return redirect(url_for('process.index'))
+			return render_template('process/upload.html',songs=songs)
 	return render_template('process/upload.html')
 
 

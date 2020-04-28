@@ -25,7 +25,7 @@ def visionapi(path):
 	result = []
 	print('Labels:')
 	for label in labels:
-		print(label.description)
+		print(label.description.split()[0])
 		result.append(label.description)
 
 	return result
