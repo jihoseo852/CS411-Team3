@@ -1,4 +1,4 @@
-# CS411 - Team 3
+# CS411 - Team 3 - Snaptracks
 
 ## Authors
 Hunter Chun - hunterch@bu.edu
@@ -11,9 +11,9 @@ Jason Hong - jason810@bu.edu
 
 Joseph Bain - jbain359@bu.edu 
 
-### Prototype Usage
+### Usage
 
-1. Get a Spotify Developer Client ID, and Client Secret. You can get one [here](https://developer.spotify.com/dashboard/)
+1. Get a Spotify and Google Credentials. You can get one [here](https://developer.spotify.com/dashboard/)
 
 2. Set environment variables 
 
@@ -21,19 +21,24 @@ Joseph Bain - jbain359@bu.edu
 
 `export SPOT_SEC="YOUR_SPOTIFY_DEV_CLIENT_SECRET"`
 
-3. `cd` into the prototype directory, and run `python spotifytracksearch.py YOUR_QUERY_TERM RESP_LIMIT`.
+`export GOOGLE_CLIENT_ID="YOUR_GOOGLE_CLIENT_ID"`
 
-For example, `python spotifytracksearch.py sunset 10` will return 10 songs with the search query sunset. The raw output will print to a file titled data.txt.
+`export GOOGLE_CLIENT_SECRET="YOUR_GOOGLE_CLIENT_SECRET"`
 
-### TODO
-1. More data points/spotify playlist creation
+`export GOOGLE_APPLICATION_CREDENTIALS="PATH_TO_CREDENTIALS_FILE.json"`
 
-2. FRONT END FRONT END FRONT END
+or alternatively add them in your .bashrc
 
-3. DB Integration
+3. Set Flask Application env
 
-4. OAuth Integration
+`export FLASK_APP='snaptracks'`
 
-5. Change name to something deliverable (i.e. snaptrack, idk, we should talk about this further)
+`export FLASK_ENV='development'`
+
+4. `cd` into the root directory, and run `python -m flask init-db`. This will initialize a local sqlite database.
+
+5. Run `python -m flask run`. Navigate to your browser and visit `http://127.0.0.1:5000/` to use Snaptracks
+
+
 
 
