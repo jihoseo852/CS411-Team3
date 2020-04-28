@@ -98,33 +98,29 @@ def callback():
 
 	# Begin user session by logging the user in
 	login_user(user)
-	session.clear()
 	db = get_db()	
 	user = db.execute (
 		'SELECT * FROM user WHERE name = ?', (users_name,)
 	).fetchone()
 	session['user_id'] = user['name']
-	load_logged_in_user()
 	# Send user back to homepage
 	return redirect(url_for('index'))
 
+@bp.before_app_request
 def load_logged_in_user():
 	user_id = session.get('user_id')
+	print(user_id)
 	if user_id is None:
-		g.user = None
+		g.user = user_id
 	else:
 		g.user = get_db().execute(
-			'SELECT * FROM user WHERE id = ?', (user_id,)
+			'SELECT name FROM user WHERE name = ?', (user_id,)
 		).fetchone()
 
 @bp.route("/logout")
 def logout():
 	logout_user()
 	return redirect(url_for("index"))
-
-@bp.before_request
-def before_request():
-	g.user = current_user
 
 @bp.route("/handleUpload", methods=['POST'])
 def fileUpload():
@@ -137,7 +133,6 @@ def fileUpload():
 def login_required(view):
 	@functools.wraps(view)
 	def wrapped_view(**kwargs):
-		before_request()
 		if g.user is None:
 			return redirect(url_for('auth.login'))
 		return view(**kwargs)

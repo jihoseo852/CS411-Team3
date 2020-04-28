@@ -22,6 +22,7 @@ def index():
 	return render_template('images/index.html', pics=pics)
 
 @bp.route('/upload', methods=['GET', 'POST'])
+@login_required
 def upload():
 	if request.method == 'POST':
 		title = request.form['title']	
