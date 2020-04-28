@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Latest Images{% endblock %}</h1>
   {% if g.user %}
     <a class="action" href="{{ url_for('process.upload') }}">New</a>
   {% endif %}
