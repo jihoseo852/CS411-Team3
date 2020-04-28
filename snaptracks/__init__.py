@@ -1,7 +1,15 @@
 import os
-
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 from flask import Flask
-from . import db, auth, process 
+from . import db, auth, process
+from snaptracks.user import User 
+from flask_login import (
+    LoginManager,
+    current_user,
+    login_required,
+    login_user,
+    logout_user,
+)
 
 def create_app(test_config=None):
     # create and configure the app
@@ -29,6 +37,11 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
+    login_manager = LoginManager(app)
+    login_manager.init_app(app)
+    @login_manager.user_loader
+    def load_user(user_id):
+         return User.get(user_id)
     db.init_app(app)
     app.register_blueprint(auth.bp)
     app.register_blueprint(process.bp)
