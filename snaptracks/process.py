@@ -1,5 +1,6 @@
 import os
 import hashlib
+from . import visionwithspotify
 from flask import (
 	Blueprint, flash, g, redirect, render_template, request, url_for
 )
@@ -27,17 +28,28 @@ def upload():
 		title = request.form['title']	
 		if 'photo' in request.files:
 			photo = request.files['photo']
-			print('hits here')
 			if photo.filename != '':
 				# doesn't work without full filepath
 				photo_db_path = '/home/jason/Documents/JH/projects/411/snaptracks/photodb/'
-				photo.save(os.path.join(photo_db_path, photo.filename))
-				img_file = open(path).read()
-				
+				photo_path = os.path.join(photo_db_path, photo.filename)
+				photo.save(photo_path)
+				with open(photo_path, 'rb') as f:
+					img_file = f.read()
+				md5_hash = hashlib.md5(img_file).hexdigest()
+				db = get_db()
+				if db.execute (
+					'SELECT hash FROM img WHERE hash = ?', (md5_hash,)
+				).fetchone() is not None:
+					cache = db.execute(
+						'SELECT body FROM img WHERE hash = ?', (md5_hash,)
+					).fetchone()
+					songs = cache[0]
+					print(songs)
+				else:
+					songs = str(visionwithspotify.process(photo_path)).strip('[]')
 				
 		error = None
 
-		print('hits')
 		if not title:
 			error = 'Title is required.'
 		
@@ -46,9 +58,9 @@ def upload():
 		else:
 			db = get_db()
 			db.execute(
-				'INSERT INTO img (title, author_id)'
-				' VALUES (?, ?)',
-				(title, g.user['id'])
+				'INSERT INTO img (title, author_id, hash, body)'
+				' VALUES (?, ?, ?, ?)',
+				(title, g.user['id'], md5_hash, songs)
 			)
 			db.commit()
 			return redirect(url_for('process.index'))
