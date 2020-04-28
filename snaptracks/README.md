@@ -17,11 +17,13 @@ Currently, the system is set to `/home/jason/.../photodb`. Locate the pointer in
 
 Initialize the db:
 
-`set FLASK_APP=snaptrack`
-
+`set GOOGLE_CLIENT_ID=clientid`
+`set GOOGLE_CLIENT_SECRET=clientsecret`
+`set FLASK_APP=snaptracks`
 `set FLASK_ENV=development`
 
 `python -m flask init-db`
+`python -m flask run`
 
 Run
 
