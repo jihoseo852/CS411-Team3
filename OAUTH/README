@@ -1,0 +1,4 @@
+set GOOGLE_CLIENT_ID=clientid
+set GOOGLE_CLIENT_SECRET=clientsecret
+
+python app.py
