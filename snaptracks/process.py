@@ -30,7 +30,7 @@ def upload():
 			photo = request.files['photo']
 			if photo.filename != '':
 				# doesn't work without full filepath
-				photo_db_path = '/home/jason/Documents/JH/projects/411/snaptracks/photodb'
+				photo_db_path = r'C:\Users\jtayb\Desktop\CS411-Team3-master\snaptracks\photodb'
 				#photo_db_path = r'C:\Users\jtayb\Desktop\CS411-Team3-master\snaptracks\photodb'
 				photo_path = os.path.join(photo_db_path, photo.filename)
 				photo.save(photo_path)
@@ -48,6 +48,7 @@ def upload():
 					return render_template('process/upload.html',songs=songs)
 				else:
 					songs = str(visionwithspotify.process(photo_path)).strip('[]')
+					return render_template('process/upload.html',songs=songs)
 				
 		error = None
 
