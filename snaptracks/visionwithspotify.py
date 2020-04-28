@@ -4,23 +4,22 @@ import json
 import requests
 import sys
 import io
-from . import vision
-from . import spotify
+import visionimg
+import spotifytracksearch
 
-def process(path):
-	#fetches keywords from visionimg.py
-	keywords = vision.visionapi(path)
+path = sys.argv[1]
 
-	#fetches songs from spotifytracksearch.py
-	print('')
-	print('Songs:')
-	result = []
-	for x in range(len(keywords)):
-		result.append(spotify.spotifysearch(keywords[x],'1'))
+#fetches keywords from visionimg.py
+keywords = visionimg.visionapi(path)
 
-	#prints array containing songs, this array can be used to play the songs
-	print('')
-	print('Result Array:')
-	print(result)
+#fetches songs from spotifytracksearch.py
+print('')
+print('Songs:')
+result = []
+for x in range(len(keywords)):
+	result.append(spotifytracksearch.spotifysearch(keywords[x],'1'))
 
-	return result
+#prints array containing songs, this array can be used to play the songs
+print('')
+print('Result Array:')
+print(result)

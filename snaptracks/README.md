@@ -17,7 +17,7 @@ Currently, the system is set to `/home/jason/.../photodb`. Locate the pointer in
 
 Initialize the db:
 
-`set FLASK_APP=snaptracks`
+`set FLASK_APP=snaptrack`
 
 `set FLASK_ENV=development`
 
