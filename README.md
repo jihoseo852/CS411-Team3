@@ -1,15 +1,12 @@
-# CS411 - Team 3 - Snaptracks
+# Snaptracks - Image-Based Music Recommendations
 
-## Authors
-Hunter Chun - hunterch@bu.edu
+## CS411 - Team 3
 
-Justin Taylor - jdtaylor@bu.edu
+## Written By
+Jason Hong, Justin Taylor, Joseph Bain, Hunter Chun, Jiho Seo 
 
-Jiho Seo - jihoseo@bu.edu
-
-Jason Hong - jason810@bu.edu
-
-Joseph Bain - jbain359@bu.edu 
+## Summary
+Our project allows users to upload a photo (landscape, person, selfie, etc), and gives music recommendations based off of that photo. It aims to provide a fast, simple interface to quickly get a few song ideas that would fit the mood. In terms of the high-level features, we have implemented a SQLite database, 3rd party Google OAuth, and the Google Vision and Spotify API's. Our project also takes advantage of image caching, and by saving the MD5 Hash of the image files to the database, we prevent duplicate requests from slowing down the system.
 
 ### Usage
 
@@ -39,6 +36,15 @@ or alternatively add them in your .bashrc
 
 5. Run `python -m flask run`. Navigate to your browser and visit `http://127.0.0.1:5000/` to use Snaptracks
 
+## Emails
+Hunter Chun - hunterch@bu.edu
 
+Justin Taylor - jdtaylor@bu.edu
+
+Jiho Seo - jihoseo@bu.edu
+
+Jason Hong - jason810@bu.edu
+
+Joseph Bain - jbain359@bu.edu 
 
 
