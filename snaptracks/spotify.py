@@ -47,13 +47,9 @@ def spotifysearch(keyword1,keyword2):
 	resp = searchResp.json()
 
 	result = []
-	x = 0
-	while True:
+	for x in range(int(keyword2)):
 		if (resp["tracks"]["items"][x]["name"]):
-			result.append(resp["tracks"]["items"][x]["name"])	
-			x+=1
-		else:
-			x+=1
+			result.append(str(resp["tracks"]["items"][x]["name"]) + ' - ' + str(resp["tracks"]["items"][x]["album"]["artists"][x]["name"]))
 
 	with open('data.txt','w') as outfile:
 		json.dump(resp,outfile)

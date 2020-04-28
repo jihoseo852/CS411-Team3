@@ -25,7 +25,7 @@ def index():
 @login_required
 def upload():
 	if request.method == 'POST':
-		title = request.form['title']	
+		title = request.form['title']
 		if 'photo' in request.files:
 			photo = request.files['photo']
 			if photo.filename != '':
@@ -54,7 +54,8 @@ def upload():
 
 		if not title:
 			error = 'Title is required.'
-		
+		if not photo:
+			error = 'Photo is required.'
 		if error is not None:
 			flash(error)
 		else:
