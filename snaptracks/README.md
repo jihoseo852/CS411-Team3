@@ -7,6 +7,8 @@ This project requires the following dependencies
 
 [Spotify Developer API](https://developer.spotify.com/dashboard/)
 
+Follow the instructions in the root directory README to set the environment.
+
 `pip install flask`
 
 ## Usage
