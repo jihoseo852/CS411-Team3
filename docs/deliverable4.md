@@ -12,8 +12,8 @@ This significantly improves the latency of duplicate requests, as no API calls a
 2. Data Models
 We are using a SQLite relational database to store user profiles (user ID, name, email, and profile picture), as well as image data (photo iD, hash, songs, author ID, time created, title). The photo and user tables are correlated by the author ID.
 
-![alt text](https://github.com/jihoseo852/CS411-Team3/tree/master/docs/notes/erd.png "ERD diagram")
+![](https://github.com/jihoseo852/CS411-Team3/tree/master/docs/notes/erd.png "ERD diagram")
 
 3. Sequence Diagram: 
 
-![alt text](https://github.com/jihoseo852/CS411-Team3/tree/master/docs/notes/seqdiagram.png "Sequence diagram")
+![](https://github.com/jihoseo852/CS411-Team3/tree/master/docs/notes/seqdiagram.png "Sequence diagram")
