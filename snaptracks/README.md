@@ -1,4 +1,4 @@
-# Prototype HTML, CSS, and JavaScript files
+# Snaptracks - Image-Based Music Recommendations
 
 ## Dependencies
 This project requires the following dependencies
